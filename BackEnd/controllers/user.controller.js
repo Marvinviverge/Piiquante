@@ -39,7 +39,7 @@ exports.login = (req, res, next) => {
                     if (!valid) {
                         return res.status(401).json({ error: "Mot de passe incorrect !" });
                     }
-                    // Connexion valide = token 24H
+                    // Connexion valide = token 1H
                     res.status(200).json({
                         userId: user._id,
                         token: jwt.sign({ userId: user._id }, process.env.SECRET_KEY, {
